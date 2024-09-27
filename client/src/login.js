@@ -24,8 +24,15 @@ $form.addEventListener("submit", async (e) => {
   }).then((response) => {
     if (response.ok) {
       // ! REDIRIGIR AL USUARIO A LA PÁGINA PRINCIPAL
+      window.location.href = "/";
     } else {
       // ! MOSTRAR UN MENSAJE DE ERROR AL USUARIO
+      Swal.fire({
+        title: "Error",
+        text: "¡Credenciales incorrectas!",
+        icon: "error",
+        confirmButtonText: "Entendido",
+      });
     }
   });
 });
